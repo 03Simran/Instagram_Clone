@@ -31,12 +31,35 @@ class PostCard extends StatelessWidget {
                 padding:EdgeInsets.symmetric(vertical:16),
                 shrinkWrap: true,
                 children: [
-                  
+                  Text('Delete post')
                 ],)
             ));
           }, icon: Icon(Icons.more_vert)),
         ],),
-      )
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal:10),
+        child: SizedBox(height:MediaQuery.of(context).size.height*0.35,
+        width:double.infinity,
+        child : Image.network('https://media.sproutsocial.com/uploads/2022/03/Instagram-Carousels.svg',
+        fit:BoxFit.cover,),
+        ),
+      ),
+      Row(children: [
+         IconButton(icon: Icon(Icons.favorite,color: Colors.red,),onPressed: (){},),
+
+         IconButton(icon: Icon(Icons.comment,),onPressed: (){},),
+
+         IconButton(icon: Icon(Icons.send),onPressed: (){},),
+          
+         Expanded(child: Align(alignment:Alignment.bottomRight,
+         child:IconButton(icon: Icon(Icons.bookmark),onPressed: () {
+           
+         },),))
+
+      ],),
+
+      //Container(padding:)
       ],)
     );
   }
